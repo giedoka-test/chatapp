@@ -1,0 +1,48 @@
+@import '../../../../../sass/variables';
+@import '../../../../../sass/utilities/module';
+
+.single-conversation {
+  color: #999fa9;
+  padding: rem-calc(10) rem-calc(15);
+  &:hover, &.active {
+    background-color: $color-blue-darker;
+  }
+  .conversation-data {
+    h3, p {
+      white-space: nowrap;
+      font-weight: 600;
+      margin: 0;
+      text-overflow: ellipsis;
+      overflow-x: hidden;
+      font-size: rem-calc(14);
+    }
+    h3 {
+      color: $color-white;
+    }
+    p {
+      color: $color-gray;
+    }
+  }
+  .conversation-image {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    span {
+      width: 100%;
+      height: 100%;
+      &.img {
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+      }
+      &.initials {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $color-blue;
+        color: $color-white;
+      }
+    }
+  }
+}

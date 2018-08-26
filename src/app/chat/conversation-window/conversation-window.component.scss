@@ -1,0 +1,13 @@
+@import '../../../sass/variables';
+.active-conversation {
+  height: 100vh;
+  width: 100%;
+  overflow: auto;
+}
+.message-box {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 20px;
+  border-top: 1px solid $color-blue-darker;
+}

@@ -1,0 +1,26 @@
+<div class="row">
+  <div class="sm-12 columns">
+    <div class="sm-12 columns align-right">
+      <header class="user-header" *ngIf="loggedUser">
+        <div class="user-info">
+          <span class="user-name">{{ loggedUser.firstName }} {{ loggedUser.lastName }}</span>
+          <div class="user-actions">
+            <!--<a href="" class="user-settings-btn"><i class="icon-tools"><span class="path1"></span><span class="path2"></span><span class="path3"></span></i></a>-->
+            <a (click)="onLogout()" class="logout-btn"><i class="icon icon-logout"></i></a>
+          </div>
+        </div>
+      </header>
+      <!--<a (click)="showAddConversationForm = !showAddConversationForm" class="add-conversation-btn"><i class="icon icon-search"></i></a>-->
+      <!--<div class="users-search" *ngIf="showAddConversationForm">-->
+        <div class="users-search">
+          <input type="text" placeholder="Search" (keyup)="findUsers($event)">
+          <ul class="users-list" *ngIf="users.length > 0">
+            <li *ngFor="let user of users">
+              <a (click)="onAddConversation($event)" [attr.data-receiver-id]="user._id">{{ user.firstName }} {{ user.lastName }}</a>
+            </li>
+          </ul>
+      </div>
+    </div>
+    <app-conversations-list *ngIf="conversations" [conversations]="conversations"></app-conversations-list>
+  </div>
+</div>

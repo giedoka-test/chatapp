@@ -1,0 +1,9 @@
+<div class="row">
+  <div class="md-8 columns conversation-window">
+    <router-outlet></router-outlet>
+  </div>
+  <span class="sidebar-trigger" (click)="showSidebar = !showSidebar" [ngClass]="{ 'sidebar-open': showSidebar }"><i class="icon icon-writing"></i></span>
+  <div class="md-4 columns main-sidebar" [ngClass]="{ 'open': showSidebar }">
+    <app-sidebar></app-sidebar>
+  </div>
+</div>
